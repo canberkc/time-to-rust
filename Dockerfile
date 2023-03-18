@@ -1,4 +1,4 @@
-FROM rust:1.63-bullseye as builder
+FROM rust:1.68-bullseye as builder
 
 WORKDIR /usr/src/time_to_rust
 COPY . .

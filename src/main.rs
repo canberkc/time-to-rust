@@ -1,13 +1,15 @@
 use axum::{
-    routing::{get}
+    routing::{get, post},
+    http::StatusCode,
+    response::IntoResponse,
+    Json, Router,
 };
 use std::net::SocketAddr;
-use axum::handler::Handler;
+use axum::handler::HandlerWithoutStateExt;
 
 #[tokio::main]
 async fn main() {
     let app = axum::Router::new()
-        .fallback(fallback.into_service())
         .route("/", get(root))
         .route("/healthcheck", get(healthcheck));
 
@@ -31,9 +33,6 @@ async fn shutdown_signal() {
 }
 
 
-pub async fn fallback(uri: axum::http::Uri) -> impl axum::response::IntoResponse {
-    (axum::http::StatusCode::NOT_FOUND, format!("No route {}", uri))
-}
 
 pub async fn root() -> (axum::http::StatusCode, String) {
     (axum::http::StatusCode::OK, "Rust AXUM".to_string())
