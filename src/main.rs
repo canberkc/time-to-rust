@@ -1,10 +1,7 @@
 use std::net::SocketAddr;
 
-use axum::{
-    response::IntoResponse,
-    routing::get,
-};
 use axum::handler::HandlerWithoutStateExt;
+use axum::{response::IntoResponse, routing::get};
 use tracing::info;
 
 use crate::handler::default::{healthcheck, root};
@@ -20,7 +17,6 @@ async fn main() {
     let app = axum::Router::new()
         .route("/", get(root))
         .route("/healthcheck", get(healthcheck));
-
 
     let addr = SocketAddr::from(([0, 0, 0, 0], 8080));
     info!("listening on {}", addr);

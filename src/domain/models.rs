@@ -3,5 +3,5 @@ pub struct Player {
     name: String,
     lastname: String,
     team: String,
-    nationality: String
+    nationality: String,
 }
