@@ -1,0 +1,20 @@
+meta {
+  name: Add Player
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/players/player
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Marcin",
+    "lastname": "Gortat",
+    "team": "Magic",
+    "nationality": "Poland"
+  }
+}

@@ -1,4 +1,4 @@
-FROM postgres:11.17-alpine
+FROM postgres:16.1-alpine3.19
 ENV POSTGRES_USER=test
 ENV POSTGRES_DB=test
 ENV POSTGRES_PASSWORD=test

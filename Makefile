@@ -17,3 +17,6 @@ kill: ## kill
 
 local: ## start all locally
 	docker-compose up --build
+
+dev-db: ## build & start only database.
+	 docker-compose -f docker-compose-db-only.yaml up
