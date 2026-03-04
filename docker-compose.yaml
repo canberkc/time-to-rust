@@ -7,7 +7,6 @@ services:
     ports:
       - "8080:8080"
   db-postgres:
-    image: 'postgres:latest'
     build:
       context: ./database
       dockerfile: Dockerfile

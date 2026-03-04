@@ -1,5 +1,31 @@
+# Version control
 .git
-Dockerfile
 .gitignore
+
+# Build artifacts
+target/
+.cargo/registry/
+.cargo/git/
+
+# Documentation
 README.md
-target/*
+LICENSE
+
+# Docker
+Dockerfile*
+docker-compose*.yaml
+
+# Build & development tools
+Makefile
+Justfile
+bruno/
+.env
+.env.local
+
+# IDE and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
